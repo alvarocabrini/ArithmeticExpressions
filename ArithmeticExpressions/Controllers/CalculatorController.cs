@@ -89,7 +89,7 @@ namespace ArithmeticExpressions.Controllers
             operation = operation.Replace(" ", "");
 
             int result = 0;
-            bool firstIteration = false;
+            bool firstIteration = true;
 
             while (operation.IndexOfAny(ValidOperators.ToCharArray()) != -1)
             {
@@ -111,7 +111,7 @@ namespace ArithmeticExpressions.Controllers
                     numberTwo = int.Parse(operation.Substring(0, secondOperator));
                     operation = operation.Substring(numberTwo.ToString().Length, operation.Length - numberTwo.ToString().Length);
 
-                    firstIteration = true;
+                    firstIteration = false;
                 }
                 else
                 {
